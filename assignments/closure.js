@@ -4,8 +4,22 @@
 function first() {
   let name = 'I am the first function';
   console.log('This is from first function:', name);
-}
 
+  function second() {
+    let sec = 'I am in the second function ';
+    console.log(sec);
+
+    function third() {
+      let lastFunc = 'I am the last one...';
+      console.log(lastFunc);
+    }
+
+    third();
+  }
+
+  second();
+}
+ console.log(first());
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 

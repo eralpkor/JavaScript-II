@@ -44,9 +44,9 @@ last(items, (lastItem) => {
 });
 
 
-function sumNums(x, y, cb) {
+function sumNums(x, y, callback) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  return cb(x + y);
+  return callback(x + y);
 }
 
 sumNums(10, 5, function(add) {
@@ -71,7 +71,7 @@ function contains(item, list, callback) {
 }
 
 contains('Gum', items, function(findItem) {
-  console.log(findItem);
+  console.log('Found Item: ', findItem);
 });
 
 /* STRETCH PROBLEM */
@@ -80,5 +80,6 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-  
+
 }
+// Math.sqrt()
