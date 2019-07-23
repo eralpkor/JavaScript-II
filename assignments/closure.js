@@ -19,22 +19,49 @@ function first() {
 
   second();
 }
- console.log(first());
+ first();
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
-// Recusion?
+// Recursion?
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 1;
+  return function () {
+    return count++;
+  }
 };
+
 // Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+var newCounter = counter();
+
+console.log(newCounter()); // 1
+console.log(newCounter()); // 2
+console.log(newCounter()); // 2
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let count = 0;
+  return {
+    increment: function() {
+      return count++;
+    },
+    decrement: function() {
+      return count--;
+    }
+  };
 };
+
+let newCounterFactory = counterFactory();
+
+newCounterFactory.increment(); // 1
+newCounterFactory.increment(); // 2
+newCounterFactory.increment(); // 3
+newCounterFactory.decrement(); // 2
+newCounterFactory.decrement(); // 1
+newCounterFactory.decrement(); // 0
+
