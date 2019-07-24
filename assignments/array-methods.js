@@ -103,3 +103,14 @@ let donationsGreater50 = runners.filter(don => don.donation > 50);
 console.log('Donations greater than $50: ', donationsGreater50);
 
 console.log('How many people donated more than $50: ', donationsGreater50.length);
+
+// extra extre
+// Problem 4 get XL shirt sizes
+let xlLargeShirts = runners.reduce(function(acc, val) {
+  if(val.shirt_size === 'XL') {
+	acc.push(val);
+  }
+  return acc;
+}, []); // empty arr as accumulator
+
+console.log('XL shirts: ', xlLargeShirts)
